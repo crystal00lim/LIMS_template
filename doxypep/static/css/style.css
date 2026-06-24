@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#data-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#tree-container {
+            height: 60vh; 
+            border: 0px;
+            background: none;
+}
+
+.logo {
+    width: 50rem;
+    height: 5rem;
+    background-color: #1D4F91;
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.force-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+}
+
+.force-grid > .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.card-body .apexcharts-canvas {
+    width: 100% !important;
+    padding-top: 20px;
+    margin-bottom: 0%;
+}
+.card-body div.apexcharts-legend.apexcharts-align-center.apx-legend-position-bottom {
+    top: 290px !important;
+}
+
+.chart-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+        /* Ensure the card doesn't let the chart expand it */
+.card-body {
+    overflow: hidden;
+    width: 100%;
+}
+
+.spacing {
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-top: 15vh;
+}
+.navdiv {
+    position: fixed;
+    z-index: 1000;
+}
+
+#webname {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 60px;
+    color: #002d6a;
+}

@@ -1,0 +1,88 @@
+:root, [data-theme="light"] {
+  --primary: #1D4F91;
+  --secondary: #0077C8;
+  --tertiary: #6CACE4;
+  --neutral: #FFFFFF;
+}
+
+:root, html[data-theme="dark"] {
+    --primary: #B9D9EB;
+    --secondary: #6CACE4;
+    --tertiary: #1D4F91;
+    --neutral: #222222;
+}
+
+.logo {
+    width: 50rem;
+    height: 5rem;
+    background-color: var(--primary);
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+#header {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+body {
+    background-color: var(--neutral);
+}
+
+.login {
+    background-color: var(--neutral);
+}
+
+.login #container {
+    background: var(--neutral);
+    border: 0px;
+    width: 100%;
+    align-items: center;
+}
+
+h1 {
+    color: var(--primary);
+}
+
+.required {
+    color: var(--tertiary);
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.login .form-row label {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text], input[type=password] {
+    border-radius: 0px;
+    background-color: transparent;
+    color: var(--primary);
+    font-weight: 500;
+    font-size:1.25rem;
+    border: 0;
+    border-bottom: 2px solid var(--tertiary);
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border-bottom: 2px solid var(--secondary);
+}
+
+input[type=submit] {
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    color: var(--blank);
+}
+
+input[type=submit]:hover {
+    background-color: var(--secondary);
+}
+
+#container > .main {
+    width: 30rem;
+}

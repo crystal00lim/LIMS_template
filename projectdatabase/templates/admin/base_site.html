@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Microbiome Core Admin{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/components/icon.svg' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <div class="logo"></div>
+    </a>
+</h1>
+{% endblock %}

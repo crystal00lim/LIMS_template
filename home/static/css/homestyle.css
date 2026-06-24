@@ -1,0 +1,78 @@
+body { padding-top: 70px; } 
+
+.navlogo {
+    /* Define dimensions */
+    width: 40px; 
+    height: 40px;
+    
+    /* The color of your logo */
+    background-color: #1D4F91;
+    
+    /* Standard Mask Properties */
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    /* Vendor Prefixes (CRITICAL for Chrome/Safari) */
+    -webkit-mask-image: url('../components/logo.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.spacing {
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-top: 15vh;
+}
+.navdiv {
+    position: fixed;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    width: 50rem;
+    height: 5rem;
+    background-color: #1D4F91;
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+#webname {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 60px;
+    color: #002d6a;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.home-hero {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

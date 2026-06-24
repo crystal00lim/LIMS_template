@@ -1,0 +1,82 @@
+{% load dictionary %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/header.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="{% static '/components/icon.svg' %}">
+</head>
+<body>
+    <div class="navdiv">
+        {% include 'header.html' %}
+    </div>
+    <div class="container">
+        <div class="spacing">
+            <div id="webname">
+                {{ app_name }} Study
+            </div>
+<!--
+            <div class="row mb-5">
+<div class="sparklines-container">
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div id="card shadow-sm p-3 mb-4">
+                <div id="card-title" class="card-title">Progress</div>
+                <div id="radialbar"></div>
+                {{ radialdata|json_script:"rdata"}}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 mb-4">
+                <div id="chart-spark2"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 mb-4">
+                <div id="chart-spark3"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card shadow-sm mt-4">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>Total Sales</th>
+                    <th>Percentage</th>
+                    <th>Last 10 Days</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$42,508</td>
+                    <td class="text-success">+2.5%</td>
+                    <td><div id="chart-1"></div></td>
+                </tr>
+                <tr>
+                    <td>$31,102</td>
+                    <td class="text-danger">-0.9%</td>
+                    <td><div id="chart-4"></div></td>
+                </tr>
+                <tr>
+                    <td>$18,420</td>
+                    <td class="text-success">+1.2%</td>
+                    <td><div id="chart-7"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+-->
+</body>
+<script src="{% static 'javascript/charts/radialbar.js' %}"></script>
+<script src="{% static 'javascript/charts/sparkline.js' %}"></script>
+</html>

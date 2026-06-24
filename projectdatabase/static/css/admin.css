@@ -1,0 +1,364 @@
+:root, html[data-theme="light"] {
+  --primary: #1D4F91;
+  --secondary: #0077C8;
+  --tertiary: #6CACE4;
+  --quatinary: #B9D9EB;
+  --neutral: #FFFFFF;
+  --neutral2: #F0F0F0;
+  --neutral3: #53565A;
+  --accent: #C75000;
+  --accent2: #259B9A;
+  --text: #000000;
+  --row: #F0F0F0;
+  --rowBorder: #B9D9EB;
+  --greenlight: #228848;
+  --redlight: #DC2A2A;
+}
+
+:root, html[data-theme="dark"] {
+    --primary: #B9D9EB;
+    --secondary: #6CACE4;
+    --tertiary: #0077C8;
+    --quatinary: #003087;
+    --neutral: #222222;
+    --neutral2: #53565A;
+    --accent: #C75000;
+    --accent2: #259B9A;
+    --text: #FFFFFF;
+    --row: #000000;
+    --rowBorder: #53565A;
+    --greenlight: #228848;
+    --redlight: #DC2A2A;
+}
+
+.logo {
+    width: 35rem;
+    height: 3rem;
+    background-color: var(--quatinary);
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+#header {
+    background-color: var(--primary);
+}
+
+#user-tools {
+    color: var(--quatinary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#user-tools a:link, 
+#user-tools a:visited {
+    color: var(--neutral);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h1 {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#content-related {
+    background: var(--neutral2);
+}
+
+#content-related .module h2 {
+    border-bottom: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+#content-related .module h3, 
+.actionlist a:visited, 
+.actionlist a:link, 
+.actionlist {
+    color: var(--text);
+}
+
+.quiet {
+    color: var(--text);
+}
+
+.module caption, 
+.module h2 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    background-color: var(--quatinary);
+    color: var(--primary);
+}
+
+#logout-form button {
+    color: var(--neutral);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+a.section:link, 
+a.section:visited {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body {
+    background-color: var(--neutral);
+    color: var(--text);
+}
+
+div.breadcrumbs {
+    background: var(--primary);
+    margin-bottom: 1rem;
+}
+
+div.breadcrumbs a, div.breadcrumbs {
+    color: var(--neutral);
+}
+
+#nav-sidebar .current-app .section:link {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+ #nav-sidebar .current-app .section:visited {
+    font-weight: bold;
+    color: var(--accent);
+ }
+
+input[type=submit].default, 
+.submit-row input.default {
+    background: var(--secondary);
+}
+
+input[type=submit].default:hover, 
+input[type=submit]:hover {
+    background: var(--primary);
+}
+
+input[type=submit], 
+.submit-row input {
+    background: var(--tertiary);
+}
+
+a:link, a:visited {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+a:active {
+    color: var(--accent);
+}
+
+#nav-sidebar tr {
+    background-color: var(--row) !important;
+}
+
+#nav-sidebar tr:nth-child(even) {
+    background-color: var(--neutral) !important; 
+}
+
+.module table tr:nth-child(odd) {
+    background-color: var(--row) !important;
+}
+
+.module table tr {
+    background-color: var(--neutral) !important;
+}
+
+legend, label {
+    color: var(--text);
+}
+
+.module table th, 
+.module table td {
+    border-color: var(--rowBorder);
+}
+
+.module {
+    background-color: var(--neutral);
+}
+
+#nav-sidebar .current-model,
+#nav-sidebar .current-model th,
+#nav-sidebar .current-model a {
+    background-color: var(inherit, --accent) !important;
+}
+
+#nav-sidebar .current-model a {
+    color: var(--accent) !important; 
+    font-weight: bold;
+}
+
+.object-tools a:link, 
+.object-tools a:visited {
+    background: var(--accent2);
+}
+
+.object-tools a.addlink {
+    padding-right: 12px;
+}
+
+.toggle-nav-sidebar {
+    background-color: var(--neutral);
+    border: none;
+    height: 32px;
+}
+button#toggle-nav-sidebar {
+    color: var(--primary);
+}
+
+.toggle-nav-sidebar:hover, 
+.toggle-nav-sidebar:focus {
+    background-color: var(--neutral2);
+}
+
+#nav-sidebar, #nav-filter {
+    background: var(--neutral);
+    border: 0px;
+}
+
+#changelist .actions, 
+#changelist .changelist-form-container, 
+.action-select {
+    background: var(--neutral) !important;
+}
+
+#changelist .changelist-form-container #changelist-filter {
+    background: var(--neutral2);
+}
+
+#changelist .changelist-footer {
+    background: var(--neutral) !important;
+    border: none !important;
+}
+
+#toolbar{
+    background: var(--neutral) !important;
+    border: none !important;
+    color: var(--primary);
+}
+
+#toolbar form input[type=submit], 
+#changelist .actions .button {
+    background: var(--secondary) !important;
+    color: var(--neutral) !important;
+    border: 0px !important;
+}
+
+#changelist .actions {
+    color: var(--primary) !important;
+}
+
+#toolbar #searchbar, 
+#changelist .actions select {
+    border: 0px !important;
+    background: var(--neutral2) !important;
+}
+
+thead th, 
+thead th a:link, 
+thead th a:visited {
+    background: var(--neutral) !important;
+    color: var(--primary) !important;
+}
+
+thead tr {
+    color: var(--primary) !important;
+}
+
+#changelist-filter li.selected {
+    border-left: 5px solid var(--accent) !important;
+}
+
+#changelist-filter li a:link, 
+#changelist-filter li a:visited, 
+#changelist-filter a {
+    color: var(--primary) !important;
+}
+
+#changelist-filter li a:hover,
+#changelist-filter a:hover {
+    color: var(--accent) !important;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--primary);
+    background-color: transparent !important;
+    border-radius: 3px;
+    cursor: default;
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--secondary) !important;
+    border: 0px;
+}
+
+.horizontal-radios {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+.horizontal-radios li {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+}
+
+.horizontal-radios input {
+    margin: 0 5px 0 0 !important;
+    float: none !important;
+}
+
+.horizontal-radios label {
+    display: inline !important;
+    float: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+}
+
+.theme-toggle svg.theme-icon-when-auto, 
+.theme-toggle svg.theme-icon-when-dark, 
+.theme-toggle svg.theme-icon-when-light {
+    fill: var(--neutral);
+    color: var(--primary);
+}
+
+#changelist .changelist-footer .paginator {
+    color: var(--text) !important;
+    background-color: var(--neutral) !important;
+}
+
+.form-row.field-patient_num {
+    background-color: var(--neutral);
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField {
+    color: var(--text);
+    background-color: var(--neutral);
+}
+
+ul.messagelist li.success {
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: var(--greenlight);
+    color: white;
+}
+
+.select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: var(--secondary) !important;
+    color: var(--neutral) !important;
+}

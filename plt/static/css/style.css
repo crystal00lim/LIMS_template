@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#data-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#tree-container {
+            width: 45vw;
+            height: 60vh; /* Must not be 0 */
+            border: 0px;
+            background: none;
+}
+
+.logo {
+    width: 50rem;
+    height: 5rem;
+    background-color: #1D4F91;
+    mask-image: url('../components/logo.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.force-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+}
+
+.force-grid > .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.card-body .apexcharts-canvas {
+    width: 100% !important;
+    padding-top: 20px;
+    margin-bottom: 0%;
+}
+.card-body div.apexcharts-legend.apexcharts-align-center.apx-legend-position-bottom {
+    top: 290px !important;
+}
+
+.chart-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+        /* Ensure the card doesn't let the chart expand it */
+.card-body {
+    overflow: hidden;
+    width: 100%;
+}
+
+.spacing {
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-top: 15vh;
+}
+.navdiv {
+    position: fixed;
+    z-index: 1000;
+}
+
+#webname {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 60px;
+    color: #002d6a;
+}
+
+.sparkline-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    width: 160px; /* Adjust card width as needed */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+/* This cuts off the dead whitespace below the semi-circle */
+.chart-wrapper {
+    height: 70px; 
+    overflow: hidden;
+    position: relative;
+}
+
+#radialbar {
+    width: 100%;
+    height: 130px; /* Higher than wrapper so the bottom half disappears safely */
+    position: absolute;
+    top: 0;
+}
