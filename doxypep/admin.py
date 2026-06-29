@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import Q
 from django.db import models
 from django import forms
 from import_export import resources, fields
@@ -326,6 +327,40 @@ class IsolateResource(resources.ModelResource):
         model = Isolate
         fields = ('id', 'original_label', 'timepoint_id', 'sample_type', 'isolate_num', 'date', 'box', 'position', 'status', 'notes')
 
+from django.contrib import admin
+
+class ProcessingStatusFilter(admin.SimpleListFilter):
+    title = 'Pipeline Status'  
+    parameter_name = 'pipeline_status'  
+
+    def lookups(self, request, model_admin):
+        return (
+            ('need_kb', 'Need KB'),
+            ('not_sequenced', 'Not Sequenced'),
+            ('completed', 'Completed'),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == 'need_kb':
+            allowed_types = ['Nas_SA', 'Phar_SA', 'Rec_SA']
+            return queryset.filter(
+                status__in=['NEW'],
+                sample_type__in=allowed_types
+                )
+
+        if self.value() == 'not_sequenced':
+            allowed_types = ['Nas_SA', 'Phar_SA', 'Rec_SA', 'Rec_ESBL', 'Vag_ESBL']
+            return queryset.exclude(
+                status__in=['WGS', 'FIN']
+            ).filter(
+                sample_type__in=allowed_types
+            )
+
+        if self.value() == 'completed':
+            return queryset.filter(status__in=['WGS', 'FIN'])
+
+        return queryset
+
 @admin.register(Isolate)
 class IsolateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     autocomplete_fields = ['timepoint_id']
@@ -344,12 +379,15 @@ class IsolateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         IsolateParticipantStatusFilter,
         IsolateTreatmentFilter,
         IsolateParticipantTypeFilter,
-        'sample_type'
+        'sample_type',
+        ProcessingStatusFilter
     )
     search_fields = [
         'isolate_num',
         'timepoint_id__timepoint_id',
         'timepoint_id__participant_id__participant_id',
+        'status',
+        'sample_type'
     ] 
 
 class KbStatusFilter(admin.SimpleListFilter):
@@ -664,7 +702,6 @@ class WGSAdmin(ImportExportModelAdmin):
 
     def get_search_results(self, request, queryset, search_term):
         if ',' in search_term:
-            # Pure AND tag search — skip super() entirely
             tag_names = [t.strip() for t in search_term.split(',') if t.strip()]
             for tag in tag_names:
                 queryset = queryset.filter(arg__name__iexact=tag)
