@@ -43,6 +43,7 @@ class Culture(models.Model):
     kpc_blue = models.BooleanField(default=False)
     kpc_pink = models.BooleanField(default=False)
     kpc_white = models.BooleanField(default=False)
+    kpc_yellow = models.BooleanField(default=False)
     date = models.DateTimeField()
     notes = models.TextField(blank=True, null=True)
 
@@ -66,6 +67,7 @@ class Isolate(models.Model):
         ('kpc_blue', 'KPC Blue'),
         ('kpc_pink', 'KPC Pink'),
         ('kpc_white', 'KPC White'),
+        ('kpc_yellow', 'KPC Yellow')
     ]
 
     isolate_id = models.CharField(max_length=7, editable=False)

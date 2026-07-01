@@ -64,7 +64,7 @@ class CultureResource(resources.ModelResource):
     )
     class Meta:
         model = Culture
-        fields = ('id', 'sample_id', 'vre_blue', 'vre_pink', 'kpc_blue', 'kpc_pink', 'date', 'notes')
+        fields = ('id', 'sample_id', 'vre_blue', 'vre_pink', 'kpc_blue', 'kpc_pink', 'kpc_white', 'kpc_yellow', 'date', 'notes')
 
 @admin.register(Culture)
 class CultureAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -78,6 +78,7 @@ class CultureAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         'kpc_blue',
         'kpc_pink',
         'kpc_white',
+        'kpc_yellow',
         'date',
         'notes',
     )
@@ -105,12 +106,13 @@ class CultureAdmin(ImportExportModelAdmin, admin.ModelAdmin):
                 'kpc_blue',
                 'kpc_pink',
                 'kpc_white',
+                'kpc_yellow',
             )
         }),
     )
 
     def formfield_for_dbfield(self, db_field, request, **kwargs):
-        target_fields = ['vre_blue', 'vre_pink', 'kpc_blue', 'kpc_pink', 'kpc_white']
+        target_fields = ['vre_blue', 'vre_pink', 'kpc_blue', 'kpc_pink', 'kpc_white', 'kpc_yellow']
         if db_field.name in target_fields:
             kwargs['widget'] = forms.RadioSelect(
                 attrs = {'class': 'horizontal-radios'},
